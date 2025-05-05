@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <link rel="stylesheet" href="style.css">
+    <title>Disney Movies</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: 'Franklin Gothic Medium';
+            font-style: italic;
+        }
+
+        h1 {
+            color: rgb(249, 249, 249);
+            font-size: 3rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3px;
+            width: 100%;
+            max-width: 1200px;
+            height: 450px;
+            padding: 0 20px;
+        }
+
+        .container img {
+            width: 10%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid;
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+        }
+
+        .container img:hover {
+            width: 25%;
+        }
+
+        #description {
+            margin-top: 20px;
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+            min-height: 80px;
+            max-width: 800px;
+        }
+    </style>
+</head>
+<body>
+    <h1>PICK YOUR FAVORITE DISNEY MOVIE</h1>
+
+    <div class="container">
+        <img src="mulan.1.jpg" alt="Mulan" data-description="Mulan (1998) - A young Chinese woman disguises herself as a man to join the army and save her father. Release: June 19, 1998. Production: Walt Disney Feature Animation." onmouseover="showDescription(this)" onmouseout="clearDescription()">
+        <img src="tangle.2.jpg" alt="Tangled" data-description="Tangled (2010) - A princess with magical hair goes on an adventure to explore the outside world. Release: November 24, 2010. Production: Walt Disney Animation Studios." onmouseover="showDescription(this)" onmouseout="clearDescription()">
+        <img src="findingdory.3.jpg" alt="Finding Dory" data-description="Finding Dory (2016) - A forgetful fish embarks on a journey to find her long-lost parents. Release: June 17, 2016. Production: Pixar Animation Studios." onmouseover="showDescription(this)" onmouseout="clearDescription()">
+        <img src="elemental.4.jpg" alt="Elemental" data-description="Elemental (2023) - In a city where fire, water, air, and earth characters live, a fiery young woman and a water guy discover new connections. Release: June 16, 2023. Production: Pixar Animation Studios." onmouseover="showDescription(this)" onmouseout="clearDescription()">
+        <img src="encanto.5.jpeg" alt="Encanto" data-description="Encanto (2021) - A young girl from a magical family must discover her own powers in a vibrant Colombian town. Release: November 24, 2021. Production: Walt Disney Animation Studios." onmouseover="showDescription(this)" onmouseout="clearDescription()">
+    </div>
+
+    <div id="description"></div>
+
+    <script>
+        function showDescription(element) {
+            document.getElementById('description').innerText = element.getAttribute('data-description');
+        }
+
+        function clearDescription() {
+            document.getElementById('description').innerText = "";
+        }
+    </script>
+</body>
+</html>
